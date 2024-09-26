@@ -1,6 +1,8 @@
 package br.com.rian.aula.cinco;
 
 import jakarta.enterprise.context.RequestScoped;
+import jakarta.faces.context.Flash;
+import jakarta.inject.Inject;
 import jakarta.inject.Named;
 import java.io.Serializable;
 
@@ -8,10 +10,16 @@ import java.io.Serializable;
 @RequestScoped
 public class AulaCinco implements Serializable {
 
+    @Inject
+    private Flash flash;
     private String nome;
 
     public String processar() {
+
+        flash.put("nomeDoUsuario", nome);
+
         return "result?faces-redirect=true";
+
     }
 
     public String getNome() {
@@ -20,6 +28,14 @@ public class AulaCinco implements Serializable {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public Flash getFlash() {
+        return flash;
+    }
+
+    public void setFlash(Flash flash) {
+        this.flash = flash;
     }
 
 }
