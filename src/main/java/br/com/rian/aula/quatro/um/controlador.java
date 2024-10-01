@@ -1,4 +1,4 @@
-package br.com.rian.aula.quatro;
+package br.com.rian.aula.quatro.um;
 
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.inject.Named;
