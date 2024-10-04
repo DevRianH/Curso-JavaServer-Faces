@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"    
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <head>
+        <title>Cadastro de Usuário</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <h:body>
+        <h:panelGrid columns="2">
+            <f:facet name="header">
+                Cadastro de Usuário
+            </f:facet>
+
+            <h:outputText value="Nome:"/>
+            <h:outputText value="#{cadastro.nome}"/>
+
+            <h:outputText value="E-mail:"/>
+            <h:outputText value="#{cadastro.email}"/>
+
+            <h:outputText value="Senha:"/>
+            <h:outputText value="#{cadastro.senha1}"/>
+
+            <h:outputText value="Confirmação de senha:"/>
+            <h:outputText value="#{cadastro.senha2}"/>
+
+            <h:outputText value="Sexo:"/>
+            <h:outputText value="Masculino" rendered="#{cadastro.sexo eq 'M'}"/>
+            <h:outputText value="Feminino" rendered="#{cadastro.sexo eq 'F'}"/>
+
+            <h:outputText value="Deseja receber e-mails?"/>
+            <h:outputText value="Sim" rendered="#{cadastro.receberEmail == true}"/>
+            <h:outputText value="Não" rendered="#{cadastro.receberEmail == false}"/>
+
+            <h:outputText value="Obersevações:"/>
+            <h:outputText value="#{cadastro.observacoes}"/>
+
+            <h:outputText value="Linguagens de programação:"/>
+            <h:outputText value="#{cadastro.linguagensAsString}"/>      
+
+        </h:panelGrid>
+    </h:body>
+</html>

@@ -4,7 +4,7 @@ import jakarta.enterprise.context.SessionScoped;
 import jakarta.inject.Named;
 import java.io.Serializable;
 
-@Named
+//@Named
 @SessionScoped
 public class controlador implements Serializable {
 

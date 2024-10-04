@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"    
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Cadastro de Usuário</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <script>
+            function verificarSenhas() {
+                var senha1 = document.getElementById("f:s1").value;
+                var senha2 = document.getElementById("f:s2").value;
+
+                if (senha1 === senha2) {
+                    return true;
+                }
+
+                alert("Senhas são diferentes");
+                return false;
+            }
+        </script>
+
+    </h:head>
+    <h:body>
+        <h:form id="f">
+            <h:messages id="messages" styleClass="error-message" />
+
+            <h:panelGrid columns="2">
+                <f:facet name="header">
+                    Cadastro de Usuário
+                </f:facet>
+
+                <h:outputText  value="Nome: "/>
+                <h:inputText value="#{cadastro.nome}"/>
+
+                <h:outputText value="E-mail: "/>
+                <h:inputText value="#{cadastro.email}"/>
+
+                <h:outputText value="Senha: "/>
+                <h:inputText id="s1" type="password" required="true" requiredMessage="O campo senha deve ser preenchido" value="#{cadastro.senha1}"/>
+
+                <h:outputText value="Confirmação de senha: "/>
+                <h:inputText id="s2" type="password" required="true" requiredMessage="O campo confirmação de senha deve ser preenchido" value="#{cadastro.senha2}"/>
+
+                <h:outputText value="Sexo: "/>
+                <h:selectOneRadio value="#{cadastro.sexo}">
+                    <f:selectItem itemValue="M" itemLabel="Masculino" />
+                    <f:selectItem itemValue="F" itemLabel="Feminino" />
+                </h:selectOneRadio>
+
+                <h:outputText value="Desenha receber e-mails?"/>
+                <h:selectBooleanCheckbox value="#{cadastro.receberEmail}"/>
+
+                <h:outputText value="Observações" />
+                <h:inputTextarea value="#{cadastro.observacoes}" rows="4" cols="30" />
+
+                <h:outputText value="Linguagens de programação:" />
+                <h:selectManyCheckbox value="#{cadastro.linguagens}">
+                    <f:selectItems value="#{cadastro.listaLinguagens}" var="l"
+                                   itemValue="#{l.id}" itemLabel="#{l.nome}" />
+                </h:selectManyCheckbox>
+
+                <h:commandButton value="Cadastrar" action="info" onclick="return verificarSenhas();"/>
+
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>

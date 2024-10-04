@@ -1,7 +1,9 @@
+br\com\rian\aula\quatro\um\controlador.class
+br\com\primeirojsf2\javaee\CadastroBean.class
+br\com\rian\aula\quatro\um\controlador$Pages.class
+br\com\rian\aula\quatro\dois\Linguagem.class
 br\com\rian\aula\seis\AulaSeis.class
-br\com\rian\aula\quatro\controlador.class
 br\com\primeirojsf2\javaee\IndexBean.class
 com\mycompany\primeirojsf2\resources\JakartaEE10Resource.class
-br\com\rian\aula\quatro\controlador$Pages.class
 com\mycompany\primeirojsf2\JakartaRestConfiguration.class
 br\com\rian\aula\cinco\AulaCinco.class
